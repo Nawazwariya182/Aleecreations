@@ -26,7 +26,7 @@ const gatheraz = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aleecreations.live"),
+  metadataBase: new URL("https://www.aleecreations.live"),
   title: {
     default: "Alee Creation's - Handcrafted Crystal Phone Charms & Accessories in India",
     template: "%s | Alee Creation's",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     "aesthetic phone charms",
     "cute phone charms India",
   ],
-  authors: [{ name: "Alee Creation's", url: "https://aleecreations.live" }],
+  authors: [{ name: "Alee Creation's", url: "https://www.aleecreations.live" }],
   creator: "Alee Creation's",
   publisher: "Alee Creation's",
   formatDetection: {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://aleecreations.live",
+    url: "https://www.aleecreations.live",
     siteName: "Alee Creation's",
     title: "Alee Creation's - Handcrafted Crystal Phone Charms & Accessories",
     description: "Shop premium handcrafted crystal phone charms & mobile accessories in India. Unique gemstone designs. Order on WhatsApp.",
@@ -108,9 +108,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Alee Creation's",
-    image: "https://aleecreations.live/Others/logo.webp",
+    image: "https://www.aleecreations.live/Others/logo.webp",
     description: "Handcrafted crystal phone charms and mobile accessories in Mumbai, India",
-    url: "https://aleecreations.live",
+    url: "https://www.aleecreations.live",
     telephone: "+918108328786",
     email: "aleenascrystal@gmail.com",
     address: {
