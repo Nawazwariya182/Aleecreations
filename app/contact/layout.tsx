@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Contact Us - Order on WhatsApp",
   description: "Contact Alee Creation's for crystal phone charms. Order via WhatsApp. Quick response. Mumbai, India. Custom orders welcome.",
   alternates: {
-    canonical: "https://alee-creations.vercel.app/contact",
+    canonical: "https://aleecreations.live/contact",
   },
   robots: {
     index: true,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Alee Creation's",
     description: "Get in touch for orders and inquiries. Quick WhatsApp response.",
-    url: "https://alee-creations.vercel.app/contact",
+    url: "https://aleecreations.live/contact",
   },
 };
 

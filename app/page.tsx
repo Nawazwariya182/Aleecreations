@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Alee Creation's - Handcrafted Crystal Phone Charms & Accessories India",
   description: "Shop premium handcrafted crystal phone charms, mobile accessories & keychains. Rose Quartz, Amethyst, Pearl designs. Mumbai, India. Order on WhatsApp. Free shipping available.",
   alternates: {
-    canonical: "https://alee-creations.vercel.app",
+    canonical: "https://aleecreations.live",
   },
   robots: {
     index: true,
