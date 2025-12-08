@@ -62,13 +62,13 @@ export default function Products() {
             <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-all duration-300" />
             {/* Name - top left with white glass pill */}
             <div className="absolute top-2 sm:top-3 md:top-4 lg:top-5 xl:top-6 left-2 sm:left-3">
-              <span className="px-2 sm:px-3 md:px-3 lg:px-4 xl:px-5 py-1 sm:py-1.5 md:py-1.5 lg:py-2 rounded-full bg-white/30 backdrop-blur-xl font-gatheraz text-gold text-xs sm:text-sm md:text-xl lg:text-2xl xl:text-2xl 2xl:text-4xl tracking-wider md:tracking-widest shadow-lg border border-white/50">
+              <span className="px-2 sm:px-3 md:px-3 lg:px-4 xl:px-5 py-1 sm:py-1.5 md:py-1.5 lg:py-2 rounded-full bg-white/30 backdrop-blur-xl font-gatheraz text-gold text-xs sm:text-md md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl tracking-wider md:tracking-widest shadow-lg border border-white/50">
                 {product.name}
               </span>
             </div>
             {/* Price - bottom right with frosted glass pill */}
             <div className="absolute bottom-4 sm:bottom-4 md:bottom-5 lg:bottom-6 xl:bottom-6 2xl:bottom-8 right-2 sm:right-3 md:right-4 lg:right-4 xl:right-5">
-              <span className="px-3 sm:px-4 md:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 md:py-2 lg:py-2.5 xl:py-3 rounded-full bg-gold/30 backdrop-blur-xl text-charcoal font-gi text-sm sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl shadow-lg border border-gold/50 backdrop-saturate-150 font-semibold">
+              <span className="px-3 sm:px-4 md:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 md:py-2 lg:py-2.5 xl:py-3 rounded-full bg-gold/30 backdrop-blur-xl text-charcoal font-gi text-sm sm:text-md md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl shadow-lg border border-gold/50 backdrop-saturate-150 font-semibold">
                 ₹ {product.price}
               </span>
             </div>
