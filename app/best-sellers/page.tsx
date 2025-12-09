@@ -179,11 +179,6 @@ export default function BestSellers() {
                 </div>
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="px-4 sm:px-6 py-2 sm:py-3 bg-gold text-charcoal font-gi text-xs sm:text-sm uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    View Details
-                  </span>
-                </div>
               </div>
             ))}
           </div>
