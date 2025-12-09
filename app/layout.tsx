@@ -139,12 +139,58 @@ export default function RootLayout({
 
   // Return policy for structured data (10-day in-store return)
   const returnPolicy = {
+    "@context": "https://schema.org",
     "@type": "MerchantReturnPolicy",
+    "@id": "https://aleecreations.live/returns#return-policy",
     applicableCountry: "IN",
     returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
     merchantReturnDays: 10,
     returnMethod: "https://schema.org/ReturnInStore",
     returnFees: "https://schema.org/FreeReturn",
+  };
+
+  // Shipping details - In-store pickup only (no delivery)
+  const shippingDetails = {
+    "@type": "OfferShippingDetails",
+    shippingRate: {
+      "@type": "MonetaryAmount",
+      value: "0",
+      currency: "INR",
+    },
+    shippingDestination: {
+      "@type": "DefinedRegion",
+      addressCountry: "IN",
+      addressRegion: ["MH"],
+    },
+    deliveryTime: {
+      "@type": "ShippingDeliveryTime",
+      handlingTime: {
+        "@type": "QuantitativeValue",
+        minValue: 1,
+        maxValue: 3,
+        unitCode: "DAY",
+      },
+      transitTime: {
+        "@type": "QuantitativeValue",
+        minValue: 0,
+        maxValue: 0,
+        unitCode: "DAY",
+      },
+    },
+  };
+
+  // Store location for pickup
+  const storeLocation = {
+    "@type": "Place",
+    name: "Ruchi Shoes - Alee Creation's",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Shop No 22-23-24-25, Harihar Shopping Centre, Parekh Road",
+      addressLocality: "Malad, Mumbai",
+      addressRegion: "Maharashtra",
+      postalCode: "400064",
+      addressCountry: "IN",
+    },
   };
 
   const productJsonLd = {
@@ -161,7 +207,10 @@ export default function RootLayout({
           "@type": "Product",
           name: "Pearl Blossom Charm",
           description: "Elegant pearl-inspired charm with delicate blossom details",
-          image: "https://aleecreations.live/products/1.webp",
+          image: [
+            "https://aleecreations.live/products/1.webp",
+          ],
+          sku: "CHCRLX001-GD",
           brand: {
             "@type": "Brand",
             name: "Alee Creation's",
@@ -171,22 +220,13 @@ export default function RootLayout({
             url: "https://aleecreations.live/collection",
             price: "599",
             priceCurrency: "INR",
-            priceValidUntil: "2025-12-31",
             availability: "https://schema.org/InStoreOnly",
-            availableAtOrFrom: {
-              "@type": "Place",
-              name: "Ruchi Shoes - Alee Creation's",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Shop No 22-23-24-25, Harihar Shopping Centre, Parekh Road",
-                addressLocality: "Malad, Mumbai",
-                addressRegion: "Maharashtra",
-                postalCode: "400064",
-                addressCountry: "IN",
-              },
-            },
+            availableAtOrFrom: storeLocation,
             itemCondition: "https://schema.org/NewCondition",
-            hasMerchantReturnPolicy: returnPolicy,
+            hasMerchantReturnPolicy: {
+              "@id": "https://aleecreations.live/returns#return-policy",
+            },
+            shippingDetails: shippingDetails,
           },
         },
       },
@@ -197,7 +237,10 @@ export default function RootLayout({
           "@type": "Product",
           name: "Crystal Butterfly",
           description: "Beautiful butterfly design adorned with sparkling crystals",
-          image: "https://aleecreations.live/products/2.webp",
+          image: [
+            "https://aleecreations.live/products/2.webp",
+          ],
+          sku: "CHCRCT002-GD",
           brand: {
             "@type": "Brand",
             name: "Alee Creation's",
@@ -207,22 +250,73 @@ export default function RootLayout({
             url: "https://aleecreations.live/collection",
             price: "449",
             priceCurrency: "INR",
-            priceValidUntil: "2025-12-31",
             availability: "https://schema.org/InStoreOnly",
-            availableAtOrFrom: {
-              "@type": "Place",
-              name: "Ruchi Shoes - Alee Creation's",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Shop No 22-23-24-25, Harihar Shopping Centre, Parekh Road",
-                addressLocality: "Malad, Mumbai",
-                addressRegion: "Maharashtra",
-                postalCode: "400064",
-                addressCountry: "IN",
-              },
-            },
+            availableAtOrFrom: storeLocation,
             itemCondition: "https://schema.org/NewCondition",
-            hasMerchantReturnPolicy: returnPolicy,
+            hasMerchantReturnPolicy: {
+              "@id": "https://aleecreations.live/returns#return-policy",
+            },
+            shippingDetails: shippingDetails,
+          },
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "Product",
+          name: "Rose Quartz Heart Charm",
+          description: "Romantic heart-shaped charm featuring genuine rose quartz crystals",
+          image: [
+            "https://aleecreations.live/products/3.webp",
+          ],
+          sku: "CHCRLX003-PK",
+          brand: {
+            "@type": "Brand",
+            name: "Alee Creation's",
+          },
+          offers: {
+            "@type": "Offer",
+            url: "https://aleecreations.live/collection",
+            price: "549",
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStoreOnly",
+            availableAtOrFrom: storeLocation,
+            itemCondition: "https://schema.org/NewCondition",
+            hasMerchantReturnPolicy: {
+              "@id": "https://aleecreations.live/returns#return-policy",
+            },
+            shippingDetails: shippingDetails,
+          },
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: {
+          "@type": "Product",
+          name: "Golden Butterfly Lanyard",
+          description: "Luxurious gold-toned lanyard with butterfly crystal accents",
+          image: [
+            "https://aleecreations.live/products/4.webp",
+          ],
+          sku: "LSCRLX004-GD",
+          brand: {
+            "@type": "Brand",
+            name: "Alee Creation's",
+          },
+          offers: {
+            "@type": "Offer",
+            url: "https://aleecreations.live/collection",
+            price: "699",
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStoreOnly",
+            availableAtOrFrom: storeLocation,
+            itemCondition: "https://schema.org/NewCondition",
+            hasMerchantReturnPolicy: {
+              "@id": "https://aleecreations.live/returns#return-policy",
+            },
+            shippingDetails: shippingDetails,
           },
         },
       },
@@ -242,6 +336,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(returnPolicy) }}
         />
         <script
           type="application/ld+json"
