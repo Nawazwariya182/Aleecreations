@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
@@ -97,10 +97,10 @@ export default function Footer() {
         {/* Bottom Copyright Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
           <p className="text-cream/70 text-xs sm:text-sm font-light font-gi">
-            © 2025 ALEE CREATION&apos;S. All rights reserved.
+            � 2025 ALEE CREATION&apos;S. All rights reserved.
           </p>
           <p className="text-cream/70 text-xs sm:text-sm font-light font-gi">
-            Crafted with ♥ in India
+            Crafted with ? in India
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Shipping & Pickup Information",
   description: "Free store pickup in Mumbai. Shipping information for crystal phone charms. Order process and delivery details for Alee Creation's.",
   alternates: {
-    canonical: "https://www.aleecreations.live/shipping",
+    canonical: "https://aleecreations.live/shipping",
   },
   robots: {
     index: true,

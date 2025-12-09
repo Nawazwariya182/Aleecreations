@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Crystal Phone Charms Collection - 50+ Handcrafted Designs",
   description: "Browse 50+ handcrafted crystal phone charms. Rose Quartz, Amethyst, Pearl, Jade & more gemstone designs. Filter by category. Shop online in India.",
   alternates: {
-    canonical: "https://www.aleecreations.live/collection",
+    canonical: "https://aleecreations.live/collection",
   },
   robots: {
     index: true,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Crystal Phone Charms Collection | Alee Creation's",
     description: "Browse our complete collection of handcrafted crystal phone charms and accessories.",
-    url: "https://www.aleecreations.live/collection",
+    url: "https://aleecreations.live/collection",
   },
 };
 
