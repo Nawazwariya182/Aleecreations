@@ -7,22 +7,26 @@ import BodyWrapper from "./components/BodyWrapper";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 const blosta = localFont({
   src: "./fonts/BLOSTA.otf",
   variable: "--font-blosta",
+  display: "swap",
 });
 
 const giRegular = localFont({
   src: "./fonts/GI-R.otf",
   variable: "--font-gi",
+  display: "swap",
 });
 
 const gatheraz = localFont({
   src: "./fonts/Gatheraz.otf",
   variable: "--font-gatheraz",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

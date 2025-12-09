@@ -608,6 +608,8 @@ export default function Collection() {
                       src={`/products/${product.id}.webp`}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 25vw"
+                      quality={75}
                       className="object-cover transition-transform duration-500"
                     />
                     {/* Category Badge */}
@@ -678,6 +680,8 @@ export default function Collection() {
                   alt={selectedProduct.name}
                   width={800}
                   height={800}
+                  sizes="(max-width: 768px) 80vw, 50vw"
+                  quality={80}
                   className="w-full max-w-[85vw] sm:max-w-[80vw] max-h-[40vh] sm:max-h-[45vh] md:max-w-[50vw] lg:max-w-[45vw] md:max-h-[80vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-md sm:rounded-lg"
                 />
                 {/* Glow effect */}

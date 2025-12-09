@@ -168,6 +168,8 @@ export default function Products() {
               alt={`${product.name} - ${product.description.split('.')[0]}`}
               width={500}
               height={500}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+              quality={75}
               className="w-full border-taupe border-2 h-auto max-h-[85vh] rounded-lg object-cover transition-all duration-500"
             />
             {/* Hover overlay */}
@@ -229,6 +231,8 @@ export default function Products() {
                   alt={selectedProduct.name}
                   width={800}
                   height={800}
+                  sizes="(max-width: 768px) 80vw, 50vw"
+                  quality={80}
                   className="w-full max-w-[80vw] max-h-[50vh] md:max-w-[50vw] lg:max-w-[45vw] md:max-h-[80vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-lg"
                 />
                 {/* Glow effect */}

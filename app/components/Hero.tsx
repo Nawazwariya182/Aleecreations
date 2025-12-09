@@ -24,6 +24,8 @@ export default function Hero() {
         fill
         className="object-cover"
         priority
+        sizes="100vw"
+        quality={80}
       />
 
       {/* Top left text - ALEE CREATION'S - responsive */}
@@ -70,6 +72,8 @@ export default function Hero() {
           src="/Others/overlap.webp"
           alt=""
           fill
+          sizes="100vw"
+          quality={60}
           className="object-cover object-bottom 2xl:object-contain"
         />
       </div>
@@ -84,6 +88,8 @@ export default function Hero() {
           src="/Others/overroverlap.webp"
           alt=""
           fill
+          sizes="100vw"
+          quality={60}
           className="object-cover object-bottom 2xl:object-contain"
         />
       </div>

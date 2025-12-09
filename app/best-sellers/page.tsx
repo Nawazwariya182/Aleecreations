@@ -45,6 +45,8 @@ export default function BestSellers() {
           src="/products/6.webp"
           alt="Best Sellers"
           fill
+          sizes="100vw"
+          quality={60}
           className="object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/90 to-cream" />
@@ -104,6 +106,8 @@ export default function BestSellers() {
                     src={`/best-seller/${product.id}.webp`}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={75}
                     className="object-contain p-4 sm:p-6 md:p-8"
                   />
                 </div>
@@ -198,6 +202,8 @@ export default function BestSellers() {
                   alt={selectedProduct.name}
                   width={800}
                   height={800}
+                  sizes="(max-width: 768px) 80vw, 60vw"
+                  quality={80}
                   className="w-full max-w-[80vw] max-h-[50vh] md:max-w-full md:max-h-[85vh] mx-auto object-contain drop-shadow-2xl transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gold/5 blur-3xl -z-10 scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
