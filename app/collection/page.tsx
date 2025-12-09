@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 interface Product {
   id: number;
   name: string;
+  SKU: string;
   price: number;
   description: string;
   material: string;
@@ -24,63 +25,466 @@ export default function Collection() {
   const [sortBy, setSortBy] = useState("default");
 
   const products: Product[] = [
-    { id: 1, name: "Pearl Blossom Charm", price: 599, description: "Elegant pearl-inspired charm with delicate blossom details. Perfect for adding a touch of sophistication to your phone.", material: "Premium crystals, Alloy base", compatibility: "All phone models", category: "Charms" },
-    { id: 2, name: "Crystal Butterfly", price: 449, description: "Beautiful butterfly design adorned with sparkling crystals. A symbol of transformation and grace.", material: "Austrian crystals, Gold-plated", compatibility: "Universal fit", category: "Charms" },
-    { id: 3, name: "Golden Loop Chain", price: 399, description: "Classic golden chain with intricate loop design. Timeless elegance for your device.", material: "18K gold-plated brass", compatibility: "All smartphones", category: "Charms" },
-    { id: 4, name: "Rose Quartz Drop", price: 549, description: "Genuine rose quartz crystal drop pendant. Known for its loving energy and soft pink hue.", material: "Natural rose quartz, Sterling silver", compatibility: "Universal", category: "Charms" },
-    { id: 5, name: "Amber Glow Pendant", price: 499, description: "Warm amber-toned crystal pendant that catches light beautifully. Creates a stunning glow effect.", material: "Amber crystals, Brass setting", compatibility: "All devices", category: "Charms" },
-    { id: 6, name: "Diamond Sparkle Set", price: 799, description: "Luxurious set featuring diamond-cut crystals. Maximum sparkle for those who love to shine.", material: "Premium cut crystals, Platinum finish", compatibility: "All phone models", category: "Long Strip Charms" },
-    { id: 7, name: "Lavender Dream", price: 379, description: "Soft lavender crystals in a dreamy arrangement. Calming and beautiful.", material: "Amethyst crystals, Silver base", compatibility: "Universal fit", category: "Charms" },
-    { id: 8, name: "Moonstone Ring", price: 649, description: "Mystical moonstone ring charm with ethereal glow. Perfect for lunar lovers.", material: "Natural moonstone, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 9, name: "Jade Leaf Charm", price: 429, description: "Delicate jade leaf design symbolizing growth and prosperity. Brings good fortune.", material: "Genuine jade, Gold-plated", compatibility: "Universal", category: "Sets" },
-    { id: 10, name: "Sapphire Wave", price: 699, description: "Deep blue sapphire crystals in a flowing wave pattern. Ocean-inspired elegance.", material: "Sapphire crystals, White gold finish", compatibility: "All devices", category: "Charms" },
-    { id: 11, name: "Opal Teardrop", price: 529, description: "Mesmerizing opal teardrop with rainbow iridescence. Each piece is unique.", material: "Natural opal, Platinum setting", compatibility: "All phone models", category: "Charms" },
-    { id: 12, name: "Citrine Sunburst", price: 459, description: "Bright citrine crystals arranged in a radiant sunburst. Brings warmth and positivity.", material: "Natural citrine, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 13, name: "Emerald Elegance", price: 679, description: "Stunning emerald green crystals with sophisticated design. Perfect for nature lovers.", material: "Emerald crystals, Gold-plated", compatibility: "All phone models", category: "Charms" },
-    { id: 14, name: "Ruby Heart", price: 599, description: "Passionate ruby-inspired heart charm. A symbol of love and devotion.", material: "Ruby crystals, Rose gold finish", compatibility: "Universal fit", category: "Charms" },
-    { id: 15, name: "Pearl Cascade", price: 549, description: "Elegant cascading pearl arrangement. Timeless beauty for your device.", material: "Freshwater pearls, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 16, name: "Topaz Twist", price: 479, description: "Warm topaz crystals in a twisted design. Brings joy and abundance.", material: "Natural topaz, Brass setting", compatibility: "Universal", category: "Charms" },
-    { id: 17, name: "Aquamarine Dream", price: 629, description: "Serene aquamarine crystals reminiscent of ocean waves. Calming and refreshing.", material: "Aquamarine crystals, Silver base", compatibility: "All devices", category: "Charms" },
-    { id: 18, name: "Garnet Glory", price: 559, description: "Deep red garnet crystals with fiery brilliance. Symbol of passion and energy.", material: "Natural garnet, Gold-plated brass", compatibility: "All phone models", category: "Long Strip Charms" },
-    { id: 19, name: "Turquoise Treasure", price: 489, description: "Beautiful turquoise stone with unique patterns. Each piece is one of a kind.", material: "Natural turquoise, Sterling silver", compatibility: "Universal fit", category: "Charms" },
-    { id: 20, name: "Peridot Paradise", price: 519, description: "Vibrant green peridot crystals. Brings prosperity and good fortune.", material: "Natural peridot, Gold-plated", compatibility: "All smartphones", category: "Charms" },
-    { id: 21, name: "Coral Charm", price: 449, description: "Delicate coral-inspired design with warm tones. Ocean-inspired elegance.", material: "Coral crystals, Rose gold finish", compatibility: "Universal", category: "Charms" },
-    { id: 22, name: "Onyx Elegance", price: 579, description: "Sophisticated black onyx with sleek design. Perfect for minimalist lovers.", material: "Natural onyx, Platinum setting", compatibility: "All devices", category: "Charms" },
-    { id: 23, name: "Tanzanite Twilight", price: 749, description: "Rare tanzanite crystals with mesmerizing purple-blue hue. Truly unique.", material: "Tanzanite crystals, White gold finish", compatibility: "All phone models", category: "Long Strip Charms" },
-    { id: 24, name: "Malachite Magic", price: 529, description: "Stunning green malachite with natural swirl patterns. Symbol of transformation.", material: "Natural malachite, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 25, name: "Lapis Luxe", price: 599, description: "Royal blue lapis lazuli with golden flecks. Ancient stone of wisdom.", material: "Natural lapis lazuli, Gold-plated", compatibility: "All smartphones", category: "Charms" },
-    { id: 26, name: "Alexandrite Aura", price: 829, description: "Color-changing alexandrite crystals. Magical and mysterious.", material: "Lab-created alexandrite, Platinum finish", compatibility: "Universal", category: "Charms" },
-    { id: 27, name: "Kunzite Kiss", price: 569, description: "Soft pink kunzite crystals. Stone of emotion and love.", material: "Natural kunzite, Rose gold finish", compatibility: "All devices", category: "Charms" },
-    { id: 28, name: "Spinel Sparkle", price: 619, description: "Brilliant spinel crystals in various colors. Versatile and stunning.", material: "Natural spinel, Sterling silver", compatibility: "All phone models", category: "Charms" },
-    { id: 29, name: "Iolite Illusion", price: 549, description: "Violet-blue iolite crystals. Stone of vision and creativity.", material: "Natural iolite, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 30, name: "Chrysoprase Charm", price: 499, description: "Apple green chrysoprase with calming energy. Fresh and vibrant.", material: "Natural chrysoprase, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 31, name: "Sunstone Glow", price: 539, description: "Sparkling sunstone with aventurescence effect. Brings warmth and vitality.", material: "Natural sunstone, Gold-plated", compatibility: "Universal", category: "Charms" },
-    { id: 32, name: "Rhodonite Rose", price: 479, description: "Pink and black rhodonite with elegant patterns. Stone of compassion.", material: "Natural rhodonite, Rose gold finish", compatibility: "All devices", category: "Charms" },
-    { id: 33, name: "Fluorite Fantasy", price: 459, description: "Multi-colored fluorite with rainbow hues. Clears mental fog.", material: "Natural fluorite, Sterling silver", compatibility: "All phone models", category: "Charms" },
-    { id: 34, name: "Prehnite Peace", price: 489, description: "Soft green prehnite with calming presence. Stone of unconditional love.", material: "Natural prehnite, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 35, name: "Howlite Harmony", price: 399, description: "White howlite with grey veining. Promotes patience and calm.", material: "Natural howlite, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 36, name: "Labradorite Light", price: 649, description: "Magical labradorite with stunning iridescence. Stone of transformation.", material: "Natural labradorite, Gold-plated", compatibility: "Universal", category: "Charms" },
-    { id: 37, name: "Carnelian Courage", price: 469, description: "Warm orange carnelian with vibrant energy. Boosts confidence.", material: "Natural carnelian, Brass setting", compatibility: "All devices", category: "Charms" },
-    { id: 38, name: "Agate Artistry", price: 439, description: "Banded agate with natural patterns. Each piece is unique.", material: "Natural agate, Sterling silver", compatibility: "All phone models", category: "Charms" },
-    { id: 39, name: "Jasper Journey", price: 419, description: "Earthy jasper with grounding energy. Stone of endurance.", material: "Natural jasper, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 40, name: "Tiger Eye Power", price: 509, description: "Golden tiger eye with silky luster. Stone of courage and protection.", material: "Natural tiger eye, Gold-plated", compatibility: "All smartphones", category: "Charms" },
-    { id: 41, name: "Aventurine Luck", price: 459, description: "Green aventurine with sparkling inclusions. Stone of opportunity.", material: "Natural aventurine, Sterling silver", compatibility: "Universal", category: "Charms" },
-    { id: 42, name: "Smoky Quartz", price: 489, description: "Elegant smoky quartz with grounding energy. Clears negativity.", material: "Natural smoky quartz, Platinum finish", compatibility: "All devices", category: "Charms" },
-    { id: 43, name: "Clear Crystal", price: 529, description: "Pure clear quartz crystal. Master healer and energy amplifier.", material: "Natural clear quartz, Sterling silver", compatibility: "All phone models", category: "Charms" },
-    { id: 44, name: "Obsidian Shield", price: 449, description: "Black obsidian with protective energy. Shields against negativity.", material: "Natural obsidian, Gold-plated brass", compatibility: "Universal fit", category: "Charms" },
-    { id: 45, name: "Hematite Strength", price: 429, description: "Metallic hematite with grounding power. Stone of the mind.", material: "Natural hematite, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 46, name: "Sodalite Serenity", price: 479, description: "Deep blue sodalite with white streaks. Enhances intuition.", material: "Natural sodalite, Gold-plated", compatibility: "Universal", category: "Charms" },
-    { id: 47, name: "Amazonite Dream", price: 519, description: "Turquoise-green amazonite with soothing energy. Stone of hope.", material: "Natural amazonite, Sterling silver", compatibility: "All devices", category: "Long Strip Charms" },
-    { id: 48, name: "Lepidolite Calm", price: 499, description: "Purple lepidolite with natural mica sparkle. Reduces stress.", material: "Natural lepidolite, Rose gold finish", compatibility: "All phone models", category: "Charms" },
-    { id: 49, name: "Bloodstone Vitality", price: 469, description: "Green bloodstone with red spots. Stone of courage and vitality.", material: "Natural bloodstone, Gold-plated brass", compatibility: "Universal fit", category: "Bag Pins" },
-    { id: 50, name: "Unakite Unity", price: 439, description: "Pink and green unakite. Balances emotions and spirituality.", material: "Natural unakite, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 51, name: "Kyanite Clarity", price: 559, description: "Blue kyanite with natural striations. Aligns all chakras.", material: "Natural kyanite, Gold-plated", compatibility: "Universal", category: "Charms" },
-    { id: 52, name: "Selenite Purity", price: 489, description: "Pure white selenite with ethereal glow. Cleanses energy.", material: "Natural selenite, Sterling silver", compatibility: "All devices", category: "Bag Pins" },
-    { id: 53, name: "Moldavite Mystery", price: 899, description: "Rare moldavite with cosmic origins. Stone of rapid transformation.", material: "Natural moldavite, Platinum setting", compatibility: "All phone models", category: "Bag Pins" },
-    { id: 54, name: "Unakite Unity", price: 439, description: "Pink and green unakite. Balances emotions and spirituality.", material: "Natural unakite, Sterling silver", compatibility: "All smartphones", category: "Charms" },
-    { id: 55, name: "Kyanite Clarity", price: 559, description: "Blue kyanite with natural striations. Aligns all chakras.", material: "Natural kyanite, Gold-plated", compatibility: "Universal", category: "Charms" },
-    { id: 56, name: "Selenite Purity", price: 489, description: "Pure white selenite with ethereal glow. Cleanses energy.", material: "Natural selenite, Sterling silver", compatibility: "All devices", category: "Charms" },
-    { id: 57, name: "Moldavite Mystery", price: 899, description: "Rare moldavite with cosmic origins. Stone of rapid transformation.", material: "Natural moldavite, Platinum setting", compatibility: "All phone models", category: "Charms" }, 
+    {
+      id: 1,
+      name: "Gilded Amber Butterfly",
+      SKU: "CHCRLX001-GD",
+      price: 599,
+      description: "Faceted amber crystals with a delicate butterfly accent for a touch of whimsy.",
+      material: "Faceted crystal glass beads, acrylic butterfly accent, silver-tone metal crimp, black nylon lanyard string",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 4,
+      name: "Amber Radiance Loop",
+      SKU: "CHCRLX004-GD",
+      price: 549,
+      description: "A seamless loop of sparkling faceted amber crystals with a vintage allure.",
+      material: "Faceted amber crystal beads, silver-tone metal jump rings, metal crimp, black nylon lanyard string",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 5,
+      name: "Opulent Pearl Butterfly",
+      SKU: "CHPLCT005-WH",
+      price: 499,
+      description: "Lustrous pearls and clear beads with a silver butterfly for a romantic touch.",
+      material: "Assorted faux pearls, clear faceted beads, silver-tone metal butterfly charm, metal crimps, white nylon lanyard string",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 6,
+      name: "Amber Gold Cascade",
+      SKU: "LSCRLX006-GD",
+      price: 799,
+      description: "A continuous strand of faceted amber crystals radiating a warm, golden glow.",
+      material: "Faceted amber crystal beads, silver-tone metal spring O-ring, metal crimp caps, durable internal beading wire",
+      compatibility: "All phone models",
+      category: "Long Strip Charms"
+    },
+    {
+      id: 7,
+      name: "Heirloom Pearl Bow",
+      SKU: "CHPLLX007-WH",
+      price: 379,
+      description: "Lustrous pearls with crystal accents and charming bow motifs for timeless elegance.",
+      material: "Faux pearl beads (round, heart, bow, flower shapes), clear acrylic tube beads, silver-tone seed beads, silver-tone metal crimp, black nylon lanyard string",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 8,
+      name: "Ginkgo Leaf Luster",
+      SKU: "CHACLX008-ML",
+      price: 449,
+      description: "Exquisite iridescent ginkgo leaf charm with a soft, ethereal glow.",
+      material: "Iridescent acrylic pendant, clear spherical bead, silver-tone metal chain, jump rings, metal crimp, black nylon lanyard string",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 9,
+      name: "Amber Gold Ensemble",
+      SKU: "STCRLX009-GD",
+      price: 649,
+      description: "Luxurious crossbody lanyard and wristlet set crafted from shimmering amber-gold crystals.",
+      material: "Faceted Crystal Beads, silver-tone metal spring O-ring, black nylon lanyard string",
+      compatibility: "All smartphones",
+      category: "Sets"
+    },
+    {
+      id: 10,
+      name: "Amber Monarch Drop",
+      SKU: "CHCRLX010-GD",
+      price: 699,
+      description: "Vertical drop of faceted amber crystals flowing into delicate butterfly beads.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy based lobster clasp, black nylon lanyard string",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 11,
+      name: "Pearl & Shell Embrace",
+      SKU: "CHPLLX011-GD",
+      price: 529,
+      description: "Lustrous pearl loop enclosing cascading chains and delicate shell petals.",
+      material: "Faux Pearls, Gold-tone Metal Alloy Lobster Clasp, Acrylic Shell Petals, Gold-tone Chains and Charms",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 12,
+      name: "Prismatic Gem Charm",
+      SKU: "CHCRCT012-ML",
+      price: 459,
+      description: "Eclectic mix of colorful crystals and geometric beads for a playful bohemian look.",
+      material: "Mixed Crystal & Glass Beads, Silver-tone Metal Alloy spring O-ring,High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 13,
+      name: "Aurora Grace Charm",
+      SKU: "CHCRLX013-ML",
+      price: 679,
+      description: "Ethereal crystals with an Aurora Borealis finish centering on a delicate butterfly.",
+      material: "Iridescent Crystal Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 14,
+      name: "Golden Teardrop Elegance",
+      SKU: "CHCRLX014-GD",
+      price: 599,
+      description: "Dazzling amber-gold beads flowing into butterflies and a shimmering teardrop.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 16,
+      name: "Bespoke Pastel Charm",
+      SKU: "CHACPS016-PS",
+      price: 549,
+      description: "Personalized pastel beads and pearls with whimsical accents. Includes custom name.",
+      material: "Acrylic Beads, Faux Pearls, Alphabet block beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 17,
+      name: "Lavender Reverie",
+      SKU: "CHPLFL017-PL",
+      price: 629,
+      description: "Gradient purple tones with pearls, butterflies, and flowers for a romantic touch.",
+      material: "Faux Pearls, Acrylic Beads, Purple Stone/Glass Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 18,
+      name: "Amber Gold Chain",
+      SKU: "LSCRLX018-GD",
+      price: 559,
+      description: "Chic wearable accessory with shimmering faceted amber-gold crystal beads.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy Spring O-ring, High Quality Wire",
+      compatibility: "All phone models",
+      category: "Long Strip Charms"
+    },
+    {
+      id: 19,
+      name: "Iridescent Conch",
+      SKU: "CHRSLX019-WH",
+      price: 489,
+      description: "Sculpted conch shell with iridescent finish and a classic white pearl.",
+      material: "Iridescent Resin Seashell, Faux Pearl, Silver-tone Metal Alloy spring O-ring, High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 20,
+      name: "Azure Custom Charm",
+      SKU: "CHCRCT020-BL",
+      price: 519,
+      description: "Luminous cyan beads and pearls with silver butterflies. Personalized with name.",
+      material: "Cat's Eye Glass Beads, Faux Pearls, Acrylic heart and stars Silver-tone Metal Alloy Chain, black nylon lanyard string",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 21,
+      name: "Crystal Ringlet",
+      SKU: "CHCRMN021-WH",
+      price: 449,
+      description: "Compact loop of clear crystals accented with a dainty white bow.",
+      material: "Faceted Crystal/Acrylic Beads, Resin Bow, Metal Balls, Silver-tone Metal Alloy Lobster Clasp, High Quality Wire",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 22,
+      name: "Midnight Aurora Band",
+      SKU: "CHCRLX022-BK",
+      price: 579,
+      description: "Sophisticated mix of dark metallic and iridescent crystals for contrast and shine.",
+      material: "Faceted Dark and Light Crystal Beads, High Quality Wire, Silver-tone Metal Alloy O-ring",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 23,
+      name: "Pearlescent Chain",
+      SKU: "LSPLLX023-WH",
+      price: 749,
+      description: "Romantic long chain of pearls, crystals, and charming butterfly and heart beads.",
+      material: "Faux small and big Pearls, Acrylic star, butterfly and heart Beads, Silver-tone Metal Alloy lobster clasp, High Quality Wire",
+      compatibility: "All phone models",
+      category: "Long Strip Charms"
+    },
+    {
+      id: 24,
+      name: "Iridescent Bow Ring",
+      SKU: "CHCRLX024-ML",
+      price: 529,
+      description: "Large faceted iridescent beads forming a ring, adorned with a cute white bow.",
+      material: "Faceted Acrylic/Crystal Beads, Resin Bow, Silver-tone Metal Alloy clasp, black nylon lanyard string, High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 25,
+      name: "Gilded Amber Bow",
+      SKU: "CHCRLX025-GD",
+      price: 599,
+      description: "Handcrafted bow motif strung with faceted amber-gold crystals.",
+      material: "Faceted Crystal Beads, Small Crystal Beads Silver-tone Metal Alloy Lobster clasp, Metal Heart tag, Metal Balls, High Quality Wire/Cord",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 26,
+      name: "Prismatic Bow Wristlet",
+      SKU: "CHCRLX026-ML",
+      price: 829,
+      description: "Statement handcrafted bow of iridescent crystals catching light from every angle.",
+      material: "Faceted Crystal Beads, Small Crystal Beads, Silver-tone Metal Alloy Lobster Clasp, High Quality Wire",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 27,
+      name: "Bronze Mist Bow",
+      SKU: "CHCRLX027-BZ",
+      price: 569,
+      description: "Elegant loose bow silhouette in rich, smoky bronze-purple faceted crystals.",
+      material: "Faceted Crystal/Glass Beads, Silver-tone Metal Alloy Claw Clasp, High Quality Wire",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 28,
+      name: "Holographic Monarch",
+      SKU: "CHACCT028-ML",
+      price: 619,
+      description: "Large transparent butterfly pendant with a mesmerizing color-shifting finish.",
+      material: "Iridescent Acrylic/Resin Butterfly, Faceted Crystal/Beads, Lab made Pearl, Black Nylon lanyard string, High Quality Wire",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 29,
+      name: "Festive Pastel Custom",
+      SKU: "CHACPS029-PS",
+      price: 549,
+      description: "Festive mix of pastel beads and pearls with a large iridescent bow. Custom text.",
+      material: "Matte Acrylic Beads, Faux Pearls, Iridescent Resin Bow, Nylon Lanyard String, High Quality Wire, Alphabet Block Beads",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 30,
+      name: "Crystalline Wristlet",
+      SKU: "CHCRMN030-WH",
+      price: 499,
+      description: "Classic loop of clear faceted crystals mimicking the sparkle of diamonds.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 31,
+      name: "Luminous Band",
+      SKU: "CHCRLX031-ML",
+      price: 539,
+      description: "Sparkling faceted crystals in blue, amber, or clear. Elevates everyday carry.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy claw clasp, High Quality Wire",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 34,
+      name: "Amber Cascade Butterfly",
+      SKU: "CHACCT034-GD",
+      price: 489,
+      description: "Holographic butterfly centerpiece with cascading strands of crystal beads.",
+      material: "Iridescent Acrylic/Resin Butterfly, Faceted Crystal Beads, Nylon Cord Lanyard String, High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 35,
+      name: "Azure Bow Charm",
+      SKU: "CHCRCT035-BL",
+      price: 399,
+      description: "Sparkling blue crystals adorned with a clear holographic bow.",
+      material: "Faceted Crystal Beads, Resin Bow, Nylon Cord Lanyard String, High Quality Wire",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 36,
+      name: "Golden Cascade Butterfly",
+      SKU: "CHCRLX036-GD",
+      price: 649,
+      description: "Holographic butterfly atop cascading strands of faceted golden beads.",
+      material: "Faceted Metallic Beads, Iridescent Acrylic Butterfly, Nylon Cord Lanyard String, High Quality Wire",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 37,
+      name: "Pink Butterfly Duo",
+      SKU: "CHPLCT037-PK",
+      price: 469,
+      description: "Double-strand design with classic pearls and pink crystals with butterfly beads.",
+      material: "Faux Pearls, Pink Crystal Beads, Acrylic Butterflies, Silver-tone Metal Alloy",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 39,
+      name: "Purple Heart Butterfly",
+      SKU: "CHCRCT039-PL",
+      price: 419,
+      description: "Translucent holographic butterfly with purple beads, pearls, and silver chains.",
+      material: "Faceted Crystal/Glass Beads, Acrylic Butterfly, Bows and Hearts, Silver-tone Chain, Nylon Cord Lanyard String, High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 40,
+      name: "Oceanic Wristlet",
+      SKU: "CHACCT040-BL",
+      price: 509,
+      description: "Refreshing mix of large ocean-blue beads and white pearls with a heart accent.",
+      material: "Acrylic Beads, Faux Pearls, Silver-tone Metal Alloy O-ring, High Quality Wire",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 41,
+      name: "Pastel Spectrum Ring",
+      SKU: "CHPLPS041-PS",
+      price: 459,
+      description: "Compact ring of rainbow pastel pearls topped with a glossy white bow.",
+      material: "Pastel Faux Pearls, Resin Bow, Silver-tone Metal Alloy small claw clasp, High Quality Wire, Metal Balls",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 42,
+      name: "Gilded Shell Wristlet",
+      SKU: "CHCRLX042-GD",
+      price: 489,
+      description: "Faceted champagne-gold beads accented with an iridescent shell charm.",
+      material: "Faceted Crystal Beads, Iridescent Resin Shell, Silver-tone Metal Alloy o-ring, High Quality Wire",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 43,
+      name: "Amber Gold Band",
+      SKU: "CHCRLX043-GD",
+      price: 529,
+      description: "Continuous loop of faceted amber-gold crystals with a cluster of butterfly beads.",
+      material: "Faceted Droplet Shaped Crystal Beads, Acrylic Butterflies, Silver-tone Metal Alloy O-ring, High Quality Wire",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 44,
+      name: "Holo Bow Ring",
+      SKU: "CHRSCT044-ML",
+      price: 449,
+      description: "Ring of clear beads topped with a stunning color-reflecting holographic bow.",
+      material: "Faceted Acrylic/Crystal Beads, Holographic Resin Bow, Silver-tone Metal Alloy Lobster Clasp, High Quality Wire",
+      compatibility: "Universal fit",
+      category: "Charms"
+    },
+    {
+      id: 45,
+      name: "Kawaii Kitty Collection",
+      SKU: "STRSCT045-PS",
+      price: 429,
+      description: "Kawaii resin charms featuring Hello Kitty in playful pastel designs.",
+      material: "Resin, Nylon Cord, Metal Hardware",
+      compatibility: "All smartphones",
+      category: "Sets"
+    },
+    {
+      id: 51,
+      name: "Bespoke Pastel Pin",
+      SKU: "BPPLPS051-PS",
+      price: 559,
+      description: "Silver safety pin with dangling pearls and pastel beads. Personalized name.",
+      material: "Silver-tone Safety Pin, Faux Pearls, Acrylic Beads, Metal Charms, High Quality Wire",
+      compatibility: "All Clothing item or bags",
+      category: "Bag Pins"
+    },
+    {
+      id: 52,
+      name: "Noir Initial Pin",
+      SKU: "BPCRLX052-BK",
+      price: 489,
+      description: "Sleek silver pin with jet-black crystals and white block initial letters.",
+      material: "Silver-tone Safety Pin, Faceted Crystal/Glass Beads, Acrylic Letter Beads",
+      compatibility: "All Clothing item or bags",
+      category: "Bag Pins"
+    },
+    {
+      id: 53,
+      name: "Victory Soccer Pin",
+      SKU: "BPCRLX053-BK",
+      price: 899,
+      description: "Silver pin with ceramic soccer bead and black crystals. Personalized name.",
+      material: "Silver-tone Safety Pin, Ceramic/Acrylic Beads and Soccer, Faceted Crystals, Acrylic Letter Beads, High Quality Wire",
+      compatibility: "All Clothing item or bags", 
+      category: "Bag Pins" 
+    },
+    {
+      id: 54,
+      name: "Crystalline Bow",
+      SKU: "CHCRMN054-WH",
+      price: 439,
+      description: "Pristine loop of clear faceted beads topped with a transparent butterfly knot.",
+      material: "Faceted Acrylic/Crystal Beads, Nylon Cord Lanyard String, Resin Bow, High Quality Wire",
+      compatibility: "All smartphones",
+      category: "Charms"
+    },
+    {
+      id: 55,
+      name: "Lavender Mist Bow",
+      SKU: "CHCRLX055-PL",
+      price: 559,
+      description: "Lovely wristlet of faceted lavender beads accented with a purple ribbon bow.",
+      material: "Faceted Acrylic/Crystal Beads, Nylon Cord Lanyard String, Resin Bow, High Quality Wire",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 56,
+      name: "Rosé Bow Charm",
+      SKU: "CHCRLX056-PK",
+      price: 489,
+      description: "Delicate wrist loop of soft pink beads finished with a matching bow.",
+      material: "Faceted Acrylic/Crystal Beads, Nylon Cord Lanyard String, Resin Bow, High Quality Wire",
+      compatibility: "All devices",
+      category: "Charms"
+    },
+    {
+      id: 57,
+      name: "Glacial Blue Knot",
+      SKU: "CHCRLX057-BL",
+      price: 899,
+      description: "Faceted light blue beads shimmering like ice, detailed with a blue butterfly knot.",
+      material: "Faceted Acrylic/Crystal Beads, Nylon Cord Lanyard String, Resin Bow, High Quality Wire",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
   ];
 
   const categories = ["All", "Charms", "Long Strip Charms", "Sets", "Bag Pins"];
@@ -170,8 +574,8 @@ export default function Collection() {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-3 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full font-gi text-[10px] sm:text-xs md:text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0 ${selectedCategory === category
-                      ? "bg-gold text-charcoal"
-                      : "bg-white border border-taupe/30 text-taupe hover:border-gold hover:text-gold"
+                    ? "bg-gold text-charcoal"
+                    : "bg-white border border-taupe/30 text-taupe hover:border-gold hover:text-gold"
                     }`}
                 >
                   {category}
@@ -191,7 +595,7 @@ export default function Collection() {
       <section className="w-full py-6 sm:py-8 md:py-12 px-3 sm:px-6 md:px-8 flex-1">
         <div className="max-w-7xl mx-auto">
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
@@ -263,18 +667,18 @@ export default function Collection() {
           </button>
 
           <div
-            className="max-w-7xl w-full md:h-[90vh] flex flex-col md:flex-row items-center gap-3 sm:gap-4 md:gap-12 animate-slideUp py-10 sm:py-12 md:py-0 my-auto"
+            className="max-w-7xl w-full md:h-[90vh] flex flex-col md:flex-row items-center gap-3 sm:gap-4 md:gap-16 animate-slideUp py-10 sm:py-12 md:py-0 my-auto px-4 md:px-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Product Image - Left Side */}
-            <div className="w-full md:w-3/5 md:h-full relative animate-slideInLeft px-2 sm:px-4 md:px-0 flex items-center justify-center flex-shrink-0">
+            <div className="w-full md:w-1/2 lg:w-3/5 md:h-full relative animate-slideInLeft px-2 sm:px-4 md:px-0 flex items-center justify-center">
               <div className="relative group md:h-full flex items-center justify-center">
                 <Image
                   src={`/products/${selectedProduct.id}.webp`}
                   alt={selectedProduct.name}
                   width={800}
                   height={800}
-                  className="w-full max-w-[85vw] sm:max-w-[80vw] max-h-[40vh] sm:max-h-[45vh] md:max-w-full md:max-h-[85vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-md sm:rounded-lg"
+                  className="w-full max-w-[85vw] sm:max-w-[80vw] max-h-[40vh] sm:max-h-[45vh] md:max-w-[50vw] lg:max-w-[45vw] md:max-h-[80vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-md sm:rounded-lg"
                 />
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gold/5 blur-3xl -z-10 scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -282,7 +686,7 @@ export default function Collection() {
             </div>
 
             {/* Product Details - Right Side */}
-            <div className="w-full md:w-2/5 flex flex-col justify-center text-center md:text-left animate-slideInRight px-3 sm:px-4 md:px-0">
+            <div className="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center text-center md:text-left animate-slideInRight px-3 sm:px-4 md:px-0 md:min-w-[320px] lg:min-w-[380px]">
               {/* Category & Brand Tag */}
               <div className="flex items-center justify-center md:justify-start gap-1.5 sm:gap-2 mb-2 sm:mb-3 md:mb-4">
                 <span className="px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 bg-gold/20 text-gold font-gi text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider sm:tracking-widest rounded-full border border-gold/30">
@@ -314,6 +718,10 @@ export default function Collection() {
               {/* Product Details */}
               <div className="space-y-1.5 sm:space-y-2 md:space-y-4 mb-4 sm:mb-6 md:mb-10 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
                 <div className="flex flex-col md:flex-row md:items-center gap-0.5 sm:gap-1 md:gap-4">
+                  <span className="text-gold/80 font-gatheraz text-sm sm:text-base md:text-md tracking-widest">SKU:</span>
+                  <span className="text-cream/70 font-gi text-xs sm:text-sm md:text-sm tracking-wide">{selectedProduct.SKU}</span>
+                </div>
+                <div className="flex flex-col md:flex-row md:items-center gap-0.5 sm:gap-1 md:gap-4">
                   <span className="text-gold/80 font-gatheraz text-sm sm:text-base md:text-md tracking-widest">Material:</span>
                   <span className="text-cream/70 font-gi text-xs sm:text-sm md:text-sm">{selectedProduct.material}</span>
                 </div>
@@ -331,6 +739,7 @@ I am interested in purchasing the following product from Alee Creation's:
 
 *Product Details*
 Name: ${selectedProduct.name}
+SKU: ${selectedProduct.SKU}
 Price: Rs. ${selectedProduct.price}
 Material: ${selectedProduct.material}
 Compatibility: ${selectedProduct.compatibility}

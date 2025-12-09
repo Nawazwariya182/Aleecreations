@@ -137,6 +137,16 @@ export default function RootLayout({
     priceRange: "₹₹",
   };
 
+  // Return policy for structured data (10-day in-store return)
+  const returnPolicy = {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "IN",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: 10,
+    returnMethod: "https://schema.org/ReturnInStore",
+    returnFees: "https://schema.org/FreeReturn",
+  };
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -151,11 +161,32 @@ export default function RootLayout({
           "@type": "Product",
           name: "Pearl Blossom Charm",
           description: "Elegant pearl-inspired charm with delicate blossom details",
+          image: "https://www.aleecreations.live/products/1.webp",
+          brand: {
+            "@type": "Brand",
+            name: "Alee Creation's",
+          },
           offers: {
             "@type": "Offer",
+            url: "https://www.aleecreations.live/collection",
             price: "599",
             priceCurrency: "INR",
-            availability: "https://schema.org/InStock",
+            priceValidUntil: "2025-12-31",
+            availability: "https://schema.org/InStoreOnly",
+            availableAtOrFrom: {
+              "@type": "Place",
+              name: "Ruchi Shoes - Alee Creation's",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Shop No 22-23-24-25, Harihar Shopping Centre, Parekh Road",
+                addressLocality: "Malad, Mumbai",
+                addressRegion: "Maharashtra",
+                postalCode: "400064",
+                addressCountry: "IN",
+              },
+            },
+            itemCondition: "https://schema.org/NewCondition",
+            hasMerchantReturnPolicy: returnPolicy,
           },
         },
       },
@@ -166,11 +197,32 @@ export default function RootLayout({
           "@type": "Product",
           name: "Crystal Butterfly",
           description: "Beautiful butterfly design adorned with sparkling crystals",
+          image: "https://www.aleecreations.live/products/2.webp",
+          brand: {
+            "@type": "Brand",
+            name: "Alee Creation's",
+          },
           offers: {
             "@type": "Offer",
+            url: "https://www.aleecreations.live/collection",
             price: "449",
             priceCurrency: "INR",
-            availability: "https://schema.org/InStock",
+            priceValidUntil: "2025-12-31",
+            availability: "https://schema.org/InStoreOnly",
+            availableAtOrFrom: {
+              "@type": "Place",
+              name: "Ruchi Shoes - Alee Creation's",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Shop No 22-23-24-25, Harihar Shopping Centre, Parekh Road",
+                addressLocality: "Malad, Mumbai",
+                addressRegion: "Maharashtra",
+                postalCode: "400064",
+                addressCountry: "IN",
+              },
+            },
+            itemCondition: "https://schema.org/NewCondition",
+            hasMerchantReturnPolicy: returnPolicy,
           },
         },
       },

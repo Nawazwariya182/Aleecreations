@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Full background image */}
       <Image
         src="/products/0.webp"
-        alt="Crystal accessory"
+        alt="Handcrafted crystal phone charm by Alee Creation's"
         fill
         className="object-cover"
         priority
@@ -64,10 +64,11 @@ export default function Hero() {
       <div 
         className="absolute bottom-0 left-0 right-0 z-50 flex items-end justify-center h-[85vh] sm:h-[85vh] md:h-[80vh] lg:h-[85vh] xl:h-[95vh] 2xl:h-[110vh]"
         style={{ transform: `translateY(-${scrollY * 0.5}px)` }}
+        aria-hidden="true"
       >
         <Image
           src="/Others/overlap.webp"
-          alt="Overlay"
+          alt=""
           fill
           className="object-cover object-bottom 2xl:object-contain"
         />
@@ -77,10 +78,11 @@ export default function Hero() {
       <div 
         className="absolute bottom-0 left-0 right-0 z-[110] flex items-end justify-center h-[85vh] sm:h-[85vh] md:h-[80vh] lg:h-[85vh] xl:h-[95vh] 2xl:h-[110vh]"
         style={{ transform: `translateY(-${scrollY * 0.5}px)` }}
+        aria-hidden="true"
       >
         <Image
           src="/Others/overroverlap.webp"
-          alt="Overlay"
+          alt=""
           fill
           className="object-cover object-bottom 2xl:object-contain"
         />

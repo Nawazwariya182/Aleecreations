@@ -78,13 +78,13 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-2 sm:gap-3">
-              <a href="https://www.instagram.com/alee__creation_s?igsh=bG5nbGVneWRlaGRl" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
+              <a href="https://www.instagram.com/alee__creation_s?igsh=bG5nbGVneWRlaGRl" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
                 <FaInstagram className="text-sm sm:text-base md:text-lg" />
               </a>
-              <a href="https://wa.me/918108328786" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
+              <a href="https://wa.me/918108328786" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
                 <FaWhatsapp className="text-sm sm:text-base md:text-lg" />
               </a>
-              <a href="https://youtube.com/@alee_creations?si=oi1JgrX_FUdT-tEe" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
+              <a href="https://youtube.com/@alee_creations?si=oi1JgrX_FUdT-tEe" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gold/50 flex items-center justify-center hover:bg-gold hover:text-charcoal text-gold transition-all">
                 <FaYoutube className="text-sm sm:text-base md:text-lg" />
               </a>
             </div>

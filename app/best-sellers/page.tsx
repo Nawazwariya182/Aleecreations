@@ -22,7 +22,7 @@ export default function BestSellers() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const bestSellers: Product[] = [
-    { id: 1, name: "Diamond Sparkle Set", price: 799, description: "Luxurious set featuring diamond-cut crystals. Maximum sparkle for those who love to shine. Our most popular choice for special occasions.", material: "Premium cut crystals, Platinum finish", compatibility: "All phone models", soldCount: 250 },
+    { id: 1, name: "Diamond Sparkle Ensemble", price: 799, description: "Luxurious set featuring diamond-cut crystals. Maximum sparkle for those who love to shine. Our most popular choice for special occasions.", material: "Premium cut crystals, Platinum finish", compatibility: "All phone models", soldCount: 250 },
   ];
 
   const closeModal = () => setSelectedProduct(null);

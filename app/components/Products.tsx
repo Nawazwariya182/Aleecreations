@@ -9,6 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 interface Product {
   id: number;
   name: string;
+  SKU: string;
   price: number;
   description: string;
   material: string;
@@ -19,21 +20,128 @@ export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const products: Product[] = [
-    { id: 1, name: "Pearl Blossom Charm", price: 599, description: "Elegant pearl-inspired charm with delicate blossom details. Perfect for adding a touch of sophistication to your phone.", material: "Premium crystals, Alloy base", compatibility: "All phone models" },
-    { id: 2, name: "Crystal Butterfly", price: 449, description: "Beautiful butterfly design adorned with sparkling crystals. A symbol of transformation and grace.", material: "Austrian crystals, Gold-plated", compatibility: "Universal fit" },
-    { id: 3, name: "Golden Loop Chain", price: 399, description: "Classic golden chain with intricate loop design. Timeless elegance for your device.", material: "18K gold-plated brass", compatibility: "All smartphones" },
-    { id: 4, name: "Rose Quartz Drop", price: 549, description: "Genuine rose quartz crystal drop pendant. Known for its loving energy and soft pink hue.", material: "Natural rose quartz, Sterling silver", compatibility: "Universal" },
-    { id: 5, name: "Amber Glow Pendant", price: 499, description: "Warm amber-toned crystal pendant that catches light beautifully. Creates a stunning glow effect.", material: "Amber crystals, Brass setting", compatibility: "All devices" },
-    { id: 6, name: "Diamond Sparkle Set", price: 799, description: "Luxurious set featuring diamond-cut crystals. Maximum sparkle for those who love to shine.", material: "Premium cut crystals, Platinum finish", compatibility: "All phone models" },
-    { id: 7, name: "Lavender Dream", price: 379, description: "Soft lavender crystals in a dreamy arrangement. Calming and beautiful.", material: "Amethyst crystals, Silver base", compatibility: "Universal fit" },
-    { id: 8, name: "Moonstone Ring", price: 649, description: "Mystical moonstone ring charm with ethereal glow. Perfect for lunar lovers.", material: "Natural moonstone, Sterling silver", compatibility: "All smartphones" },
-    { id: 9, name: "Jade Leaf Charm", price: 429, description: "Delicate jade leaf design symbolizing growth and prosperity. Brings good fortune.", material: "Genuine jade, Gold-plated", compatibility: "Universal" },
-    { id: 10, name: "Sapphire Wave", price: 699, description: "Deep blue sapphire crystals in a flowing wave pattern. Ocean-inspired elegance.", material: "Sapphire crystals, White gold finish", compatibility: "All devices" },
-    { id: 11, name: "Opal Teardrop", price: 529, description: "Mesmerizing opal teardrop with rainbow iridescence. Each piece is unique.", material: "Natural opal, Platinum setting", compatibility: "All phone models" },
-    { id: 12, name: "Citrine Sunburst", price: 459, description: "Bright citrine crystals arranged in a radiant sunburst. Brings warmth and positivity.", material: "Natural citrine, Gold-plated brass", compatibility: "Universal fit" },
+    {
+      id: 1,
+      name: "Gilded Amber Butterfly",
+      SKU: "CHCRLX001-GD",
+      price: 599,
+      description: "Faceted amber crystals with a delicate butterfly accent for a touch of whimsy.",
+      material: "Faceted crystal glass beads, acrylic butterfly accent, silver-tone metal crimp, black nylon lanyard string",
+      compatibility: "All phone models",
+    },
+    {
+      id: 4,
+      name: "Amber Radiance Loop",
+      SKU: "CHCRLX004-GD",
+      price: 549,
+      description: "A seamless loop of sparkling faceted amber crystals with a vintage allure.",
+      material: "Faceted amber crystal beads, silver-tone metal jump rings, metal crimp, black nylon lanyard string",
+      compatibility: "Universal",
+    },
+    {
+      id: 5,
+      name: "Opulent Pearl Butterfly",
+      SKU: "CHPLCT005-WH",
+      price: 499,
+      description: "Lustrous pearls and clear beads with a silver butterfly for a romantic touch.",
+      material: "Assorted faux pearls, clear faceted beads, silver-tone metal butterfly charm, metal crimps, white nylon lanyard string",
+      compatibility: "All devices",
+    },
+    {
+      id: 6,
+      name: "Amber Gold Cascade",
+      SKU: "LSCRLX006-GD",
+      price: 799,
+      description: "A continuous strand of faceted amber crystals radiating a warm, golden glow.",
+      material: "Faceted amber crystal beads, silver-tone metal spring O-ring, metal crimp caps, durable internal beading wire",
+      compatibility: "All phone models",
+    },
+    {
+      id: 7,
+      name: "Heirloom Pearl Bow",
+      SKU: "CHPLLX007-WH",
+      price: 379,
+      description: "Lustrous pearls with crystal accents and charming bow motifs for timeless elegance.",
+      material: "Faux pearl beads (round, heart, bow, flower shapes), clear acrylic tube beads, silver-tone seed beads, silver-tone metal crimp, black nylon lanyard string",
+      compatibility: "Universal fit",
+    },
+    {
+      id: 8,
+      name: "Ginkgo Leaf Luster",
+      SKU: "CHACLX008-ML",
+      price: 449,
+      description: "Exquisite iridescent ginkgo leaf charm with a soft, ethereal glow.",
+      material: "Iridescent acrylic pendant, clear spherical bead, silver-tone metal chain, jump rings, metal crimp, black nylon lanyard string",
+      compatibility: "Universal fit",
+    },
+    {
+      id: 9,
+      name: "Amber Gold Ensemble",
+      SKU: "STCRLX009-GD",
+      price: 649,
+      description: "Luxurious crossbody lanyard and wristlet set crafted from shimmering amber-gold crystals.",
+      material: "Faceted Crystal Beads, silver-tone metal spring O-ring, black nylon lanyard string",
+      compatibility: "All smartphones",
+    },
+    {
+      id: 10,
+      name: "Amber Monarch Drop",
+      SKU: "CHCRLX010-GD",
+      price: 699,
+      description: "Vertical drop of faceted amber crystals flowing into delicate butterfly beads.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy based lobster clasp, black nylon lanyard string",
+      compatibility: "All devices",
+    },
+    {
+      id: 11,
+      name: "Pearl & Shell Embrace",
+      SKU: "CHPLLX011-GD",
+      price: 529,
+      description: "Lustrous pearl loop enclosing cascading chains and delicate shell petals.",
+      material: "Faux Pearls, Gold-tone Metal Alloy Lobster Clasp, Acrylic Shell Petals, Gold-tone Chains and Charms",
+      compatibility: "All phone models",
+    },
+    {
+      id: 12,
+      name: "Prismatic Gem Charm",
+      SKU: "CHCRCT012-ML",
+      price: 459,
+      description: "Eclectic mix of colorful crystals and geometric beads for a playful bohemian look.",
+      material: "Mixed Crystal & Glass Beads, Silver-tone Metal Alloy spring O-ring,High Quality Wire",
+      compatibility: "Universal fit",
+    },
+    {
+      id: 13,
+      name: "Aurora Grace Charm",
+      SKU: "CHCRLX013-ML",
+      price: 679,
+      description: "Ethereal crystals with an Aurora Borealis finish centering on a delicate butterfly.",
+      material: "Iridescent Crystal Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All phone models",
+    },
+    {
+      id: 14,
+      name: "Golden Teardrop Elegance",
+      SKU: "CHCRLX014-GD",
+      price: 599,
+      description: "Dazzling amber-gold beads flowing into butterflies and a shimmering teardrop.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "Universal fit",
+    },
   ];
 
   const closeModal = () => setSelectedProduct(null);
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (selectedProduct) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [selectedProduct]);
 
   return (
     <section className="w-full bg-cream py-8 md:py-10">
@@ -50,10 +158,14 @@ export default function Products() {
             key={product.id} 
             className="relative w-full overflow-hidden group cursor-pointer break-inside-avoid border border-cream/50 hover:z-10"
             onClick={() => setSelectedProduct(product)}
+            onKeyDown={(e) => e.key === 'Enter' && setSelectedProduct(product)}
+            role="button"
+            tabIndex={0}
+            aria-label={`View ${product.name} - ₹${product.price}`}
           >
             <Image
               src={`/products/${product.id}.webp`}
-              alt={`Crystal accessory ${product.id}`}
+              alt={`${product.name} - ${product.description.split('.')[0]}`}
               width={500}
               height={500}
               className="w-full border-taupe border-2 h-auto max-h-[85vh] rounded-lg object-cover transition-all duration-500"
@@ -91,10 +203,14 @@ export default function Products() {
         <div 
           className="fixed inset-0 bg-charcoal/90 backdrop-blur-md z-[9999] flex items-start md:items-center justify-center p-4 md:p-8 animate-fadeIn overflow-y-auto"
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="product-modal-title"
         >
           {/* Close Button */}
           <button 
             onClick={closeModal}
+            aria-label="Close product details"
             className="fixed top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full border border-cream/30 bg-charcoal/50 text-cream/70 flex items-center justify-center hover:text-cream hover:border-cream hover:rotate-90 transition-all duration-300 z-[10000]"
           >
             <HiX size={20} className="md:hidden" />
@@ -102,18 +218,18 @@ export default function Products() {
           </button>
 
           <div 
-            className="max-w-7xl w-full md:h-[90vh] flex flex-col md:flex-row items-center gap-4 md:gap-0 animate-slideUp py-12 md:py-0 my-auto"
+            className="max-w-7xl w-full md:h-[90vh] flex flex-col md:flex-row items-center gap-4 md:gap-16 animate-slideUp py-12 md:py-0 my-auto px-4 md:px-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Product Image - Left Side */}
-            <div className="w-full md:w-3/5 md:h-full relative animate-slideInLeft px-4 md:px-0 flex items-center justify-center flex-shrink-0">
+            <div className="w-full md:w-1/2 lg:w-3/5 md:h-full relative animate-slideInLeft px-4 md:px-0 flex items-center justify-center">
               <div className="relative group md:h-full flex items-center justify-center">
                 <Image
                   src={`/products/${selectedProduct.id}.webp`}
                   alt={selectedProduct.name}
                   width={800}
                   height={800}
-                  className="w-full max-w-[80vw] max-h-[50vh] md:max-w-full md:max-h-[85vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-lg"
+                  className="w-full max-w-[80vw] max-h-[50vh] md:max-w-[50vw] lg:max-w-[45vw] md:max-h-[80vh] object-contain drop-shadow-2xl transition-transform duration-500 rounded-lg"
                 />
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gold/5 blur-3xl -z-10 scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -121,14 +237,14 @@ export default function Products() {
             </div>
 
             {/* Product Details - Right Side */}
-            <div className="w-full md:w-2/5 flex flex-col justify-center text-center md:text-left animate-slideInRight px-4 md:px-0">
+            <div className="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center text-center md:text-left animate-slideInRight px-4 md:px-0 md:min-w-[320px] lg:min-w-[380px]">
               {/* Brand Tag */}
               <p className="text-gold/70 font-gi text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-2 sm:mb-4 animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
                 Alee Creation&apos;s
               </p>
 
               {/* Product Name */}
-              <h2 className="font-gatheraz text-3xl sm:text-4xl md:text-3xl lg:text-6xl text-cream tracking-wide mb-4 sm:mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+              <h2 id="product-modal-title" className="font-gatheraz text-3xl sm:text-4xl md:text-3xl lg:text-6xl text-cream tracking-wide mb-4 sm:mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
                 {selectedProduct.name}
               </h2>
               
@@ -148,6 +264,10 @@ export default function Products() {
               {/* Product Details */}
               <div className="space-y-2 sm:space-y-4 mb-6 sm:mb-10 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
                 <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                  <span className="text-gold/80 font-gatheraz text-base sm:text-md md:text-md tracking-widest">SKU:</span>
+                  <span className="text-cream/70 font-gi text-sm sm:text-base md:text-sm tracking-wide">{selectedProduct.SKU}</span>
+                </div>
+                <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
                   <span className="text-gold/80 font-gatheraz text-base sm:text-md md:text-md tracking-widest">Material:</span>
                   <span className="text-cream/70 font-gi text-sm sm:text-base md:text-sm">{selectedProduct.material}</span>
                 </div>
@@ -165,6 +285,7 @@ I am interested in purchasing the following product from Alee Creation's:
 
 *Product Details*
 Name: ${selectedProduct.name}
+SKU: ${selectedProduct.SKU}
 Price: Rs. ${selectedProduct.price}
 Material: ${selectedProduct.material}
 Compatibility: ${selectedProduct.compatibility}

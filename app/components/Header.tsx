@@ -50,6 +50,7 @@ export default function Header() {
         href="https://wa.me/918108328786?text=Hi! I'm interested in your crystal accessories."
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp"
         className="hidden md:block px-4 lg:px-6 py-2 lg:py-2.5 border border-gold text-gold text-xs lg:text-sm uppercase tracking-widest font-gi hover:bg-gold hover:text-charcoal transition-all duration-300"
       >
         Contact
