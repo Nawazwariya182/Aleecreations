@@ -15,14 +15,60 @@ interface Product {
   description: string;
   material: string;
   compatibility: string;
-  soldCount: number;
 }
 
 export default function BestSellers() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const bestSellers: Product[] = [
-    { id: 1, name: "Diamond Sparkle Ensemble", price: 799, description: "Luxurious set featuring diamond-cut crystals. Maximum sparkle for those who love to shine. Our most popular choice for special occasions.", material: "Premium cut crystals, Platinum finish", compatibility: "All phone models", soldCount: 250 },
+    {
+      id: 1,
+      name: "Gilded Amber Butterfly",
+      price: 149,
+      description: "Faceted amber crystals with a delicate butterfly accent for a touch of whimsy.",
+      material: "Faceted crystal glass beads, acrylic butterfly accent, silver-tone metal crimp, black nylon lanyard string",
+      compatibility: "All phone models",
+    },
+    {
+      id: 17,
+      name: "Lavender Reverie",
+      price: 149,
+      description: "Gradient purple tones with pearls, butterflies, and flowers for a romantic touch.",
+      material: "Faux Pearls, Acrylic Beads, Purple Stone/Glass Beads, Silver-tone Metal Alloy, Nylon Cord",
+      compatibility: "All devices",
+    },
+    {
+      id: 10,
+      name: "Amber Monarch Drop",
+      price: 49,
+      description: "Vertical drop of faceted amber crystals flowing into delicate butterfly beads.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy based lobster clasp, black nylon lanyard string",
+      compatibility: "All devices",
+    },
+    {
+      id: 18,
+      name: "Amber Gold Chain",
+      price: 599,
+      description: "Chic wearable accessory with shimmering faceted amber-gold crystal beads.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy Spring O-ring, High Quality Wire",
+      compatibility: "All phone models",
+    },
+    {
+      id: 25,
+      name: "Gilded Amber Bow",
+      price: 299,
+      description: "Handcrafted bow motif strung with faceted amber-gold crystals.",
+      material: "Faceted Crystal Beads, Small Crystal Beads Silver-tone Metal Alloy Lobster clasp, Metal Heart tag, Metal Balls, High Quality Wire/Cord",
+      compatibility: "All smartphones",
+    },
+    {
+      id: 39,
+      name: "Purple Heart Butterfly",
+      price: 249,
+      description: "Translucent holographic butterfly with purple beads, pearls, and silver chains.",
+      material: "Faceted Crystal/Glass Beads, Acrylic Butterfly, Bows and Hearts, Silver-tone Chain, Nylon Cord Lanyard String, High Quality Wire",
+      compatibility: "Universal fit",
+    },
   ];
 
   const closeModal = () => setSelectedProduct(null);
@@ -87,7 +133,7 @@ export default function BestSellers() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
             {bestSellers.map((product, index) => (
-              <div 
+              <div
                 key={product.id}
                 className="group relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-cream"
                 onClick={() => setSelectedProduct(product)}
@@ -155,13 +201,13 @@ export default function BestSellers() {
             We have many more designs in our collection. Contact us for personalized recommendations or custom designs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <Link 
+            <Link
               href="./collection"
               className="w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 border-2 border-gold text-gold font-gi text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-gold hover:text-charcoal transition-all duration-300 rounded-full text-center"
             >
               View All Products
             </Link>
-            <a 
+            <a
               href="https://wa.me/918108328786?text=Hi! I'm looking for a specific crystal accessory design."
               target="_blank"
               rel="noopener noreferrer"
@@ -177,12 +223,12 @@ export default function BestSellers() {
 
       {/* Product Modal */}
       {selectedProduct && (
-        <div 
+        <div
           className="fixed inset-0 bg-charcoal/90 backdrop-blur-md z-[9999] flex items-start md:items-center justify-center p-4 md:p-8 animate-fadeIn overflow-y-auto"
           onClick={closeModal}
         >
           {/* Close Button */}
-          <button 
+          <button
             onClick={closeModal}
             className="fixed top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full border border-cream/30 bg-charcoal/50 text-cream/70 flex items-center justify-center hover:text-cream hover:border-cream hover:rotate-90 transition-all duration-300 z-[10000]"
           >
@@ -190,7 +236,7 @@ export default function BestSellers() {
             <HiX size={24} className="hidden md:block" />
           </button>
 
-          <div 
+          <div
             className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-4 md:gap-16 animate-slideUp py-12 md:py-0 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -217,14 +263,13 @@ export default function BestSellers() {
                 <span className="px-2 sm:px-3 py-1 bg-gold/20 text-gold font-gi text-[10px] sm:text-xs uppercase tracking-widest rounded-full border border-gold/30">
                   Best Seller
                 </span>
-                <span className="text-cream/50 font-gi text-xs sm:text-sm">{selectedProduct.soldCount}+ sold</span>
               </div>
 
               {/* Product Name */}
               <h2 className="font-gatheraz text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide mb-4 sm:mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
                 {selectedProduct.name}
               </h2>
-              
+
               {/* Price */}
               <p className="text-gold font-gatheraz text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-8 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
                 Rs. {selectedProduct.price}
@@ -251,7 +296,7 @@ export default function BestSellers() {
               </div>
 
               {/* WhatsApp Order Button */}
-              <a 
+              <a
                 href={`https://wa.me/918108328786?text=${encodeURIComponent(`Hello,
 
 I am interested in purchasing the following best-selling product from Alee Creation's:

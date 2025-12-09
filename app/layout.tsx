@@ -271,9 +271,19 @@ export default function RootLayout({
           itemListElement: [
             {
               "@type": "Offer",
+              price: "299",
+              priceCurrency: "INR",
+              availability: "https://schema.org/InStoreOnly",
               itemOffered: {
                 "@type": "Product",
                 name: "Crystal Phone Charms",
+                image: "https://aleecreations.live/products/1.webp",
+                offers: {
+                  "@type": "Offer",
+                  price: "299",
+                  priceCurrency: "INR",
+                  availability: "https://schema.org/InStoreOnly",
+                },
               },
             },
           ],
@@ -284,9 +294,19 @@ export default function RootLayout({
           itemListElement: [
             {
               "@type": "Offer",
+              price: "499",
+              priceCurrency: "INR",
+              availability: "https://schema.org/InStoreOnly",
               itemOffered: {
                 "@type": "Product",
                 name: "Crystal Phone Lanyards",
+                image: "https://aleecreations.live/products/4.webp",
+                offers: {
+                  "@type": "Offer",
+                  price: "499",
+                  priceCurrency: "INR",
+                  availability: "https://schema.org/InStoreOnly",
+                },
               },
             },
           ],
