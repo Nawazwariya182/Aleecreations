@@ -30,7 +30,7 @@ export default function BestSellers() {
       compatibility: "All phone models",
     },
     {
-      id: 17,
+      id: 3,
       name: "Lavender Reverie",
       price: 149,
       description: "Gradient purple tones with pearls, butterflies, and flowers for a romantic touch.",
@@ -38,7 +38,7 @@ export default function BestSellers() {
       compatibility: "All devices",
     },
     {
-      id: 10,
+      id: 2,
       name: "Amber Monarch Drop",
       price: 49,
       description: "Vertical drop of faceted amber crystals flowing into delicate butterfly beads.",
@@ -46,7 +46,7 @@ export default function BestSellers() {
       compatibility: "All devices",
     },
     {
-      id: 18,
+      id: 4,
       name: "Amber Gold Chain",
       price: 599,
       description: "Chic wearable accessory with shimmering faceted amber-gold crystal beads.",
@@ -54,7 +54,7 @@ export default function BestSellers() {
       compatibility: "All phone models",
     },
     {
-      id: 25,
+      id: 5,
       name: "Gilded Amber Bow",
       price: 299,
       description: "Handcrafted bow motif strung with faceted amber-gold crystals.",
@@ -62,7 +62,7 @@ export default function BestSellers() {
       compatibility: "All smartphones",
     },
     {
-      id: 39,
+      id: 6,
       name: "Purple Heart Butterfly",
       price: 249,
       description: "Translucent holographic butterfly with purple beads, pearls, and silver chains.",
@@ -168,7 +168,7 @@ export default function BestSellers() {
                       Rs. {product.price}
                     </p>
                     <div className="flex items-center gap-0.5 sm:gap-1">
-                      {[...Array(4)].map((_, i) => (
+                      {[...Array(5)].map((_, i) => (
                         <HiStar key={i} className="text-gold text-xs sm:text-sm" />
                       ))}
                     </div>
