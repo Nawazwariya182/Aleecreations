@@ -109,7 +109,7 @@ export default function Collection() {
       id: 12,
       name: "Prismatic Gem Charm",
       SKU: "CHCRCT012-ML",
-      price: 459,
+      price: 149,
       description: "Eclectic mix of colorful crystals and geometric beads for a playful bohemian look.",
       material: "Mixed Crystal & Glass Beads, Silver-tone Metal Alloy spring O-ring,High Quality Wire",
       compatibility: "Universal fit",
@@ -404,6 +404,56 @@ export default function Collection() {
       material: "Resin, Nylon Cord, Metal Hardware",
       compatibility: "All smartphones",
       category: "Sets"
+    },
+    {
+      id: 46,
+      name: "Pearl Ring & White Bow Charm",
+      SKU: "CHPLCT046-WH",
+      price: 479,
+      description: "A chic and compact charm featuring a ring formed by large white faux pearls, topped with a glossy white resin bow. It attaches via a sturdy silver-tone lobster clasp, adding a sophisticated touch to your phone case.",
+      material: "Faux Pearls, Resin Bow, Silver-tone Metal Alloy",
+      compatibility: "Universal",
+      category: "Charms"
+    },
+    {
+      id: 47,
+      name: "Rose Quartz Crystal Crossbody Chain",
+      SKU: "LSCRLX047-PK",
+      price: 519,
+      description: "A long, elegant chain designed for crossbody wear. Constructed from faceted light pink crystal beads that offer a delicate, romantic shimmer. It features durable silver-tone clasps at both ends for secure attachment to a phone case.",
+      material: "Faceted Crystal Beads, Silver-tone Metal Alloy",
+      compatibility: "All devices",
+      category: "Long Strip Charms"
+    },
+    {
+      id: 48,
+      name: "Pearl Bow & Tassel Charm",
+      SKU: "CHPLLX048-WH",
+      price: 499,
+      description: "A unique structural accessory crafted entirely from lustrous white pearls. The pearls are wired to form a bow shape with trailing ends that resemble a tassel, creating a graceful silhouette.",
+      material: "Faux Pearls, Silver-tone Metal Alloy, Wire",
+      compatibility: "All phone models",
+      category: "Charms"
+    },
+    {
+      id: 49,
+      name: "Pink Star & Pearl Safety Pin",
+      SKU: "BPPLPS049-PK",
+      price: 469,
+      description: "A playful pin accessory featuring dangling chains adorned with pink star beads, white pearls, and a clear flower charm. It includes a letter bead for a personalized touch.",
+      material: "Silver-tone Safety Pin, Acrylic Stars, Faux Pearls",
+      compatibility: "Universal fit",
+      category: "Bag Pins"
+    },
+    {
+      id: 50,
+      name: "Y2K 'Baddie' Keychain Charm",
+      SKU: "CHACCT050-ML",
+      price: 439,
+      description: "An edgy and fun accessory with a Y2K aesthetic. Features a silver-tone swivel clasp holding a 'BADDIE' letter bead strand, a black 8-ball bead, a clear butterfly, and a glittery star charm.",
+      material: "Acrylic Beads, Metal Charms, Silver-tone Alloy",
+      compatibility: "All smartphones",
+      category: "Charms"
     },
     {
       id: 51,
